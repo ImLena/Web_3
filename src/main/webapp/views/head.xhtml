@@ -6,10 +6,33 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <f:view>
-    <h:form>
-        <div id="header">
+    <h:head>
+        <h:outputStylesheet library="Css" name="style.css"/>
+    </h:head>
+    <h:body>
+        <table class="verst">
+            <tr class="header">
+                <td class="left">
+                    <div>Супрядкина Дарья, Ходосова Елена, P3230
+                    </div>
+                </td>
+                <td class="right">
+                    <div>Вариант 2600
+                    </div>
+                </td>
+            </tr>
+            <tr id="page">
+                <ui:insert name="page">
+                    page
+                </ui:insert>
+            </tr>
+        </table>
+        <div class="footer">
+            <p><a class="git-href" href="https://github.com/SuDarina/Web_2">
+            </a></p>
         </div>
-    </h:form>
+    </h:body>
 </f:view>
+
 
 </html>

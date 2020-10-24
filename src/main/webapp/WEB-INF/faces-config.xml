@@ -4,6 +4,18 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
+    <managed-bean>
+        <managed-bean-name>pointBean</managed-bean-name>
+        <managed-bean-class>PointBean</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>pointEntity</managed-bean-name>
+        <managed-bean-class>PointEntity</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
     <navigation-rule>
         <from-view-id>/views/main.xhtml</from-view-id>
         <navigation-case>

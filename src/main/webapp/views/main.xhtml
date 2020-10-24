@@ -13,17 +13,20 @@
                 <td>
                     <h:form id="formtab">
                         <tr>
-                                <td>
-                            <label for="inX">Выберите X:</label>
-                                <input id="inX" type="text" maxlength="5" />
+                            <td>
+                                <label for="inX">Выберите X:</label>
+                                <h:inputText id="inX" type="text" maxlength="5" value="#{pointBean.point.x}"/>
                             </td>
                             <td><label>ice</label>
                                 <ace:panel>
-                                <ace:sliderEntry min="-4" max="4" clickableRail="false" axis="x" length="1000" stepPercent="10" id="slider"/>
+                                    <ace:sliderEntry/>
+                                    <!--
+                                    <ace:sliderEntry min="-4" max="4" clickableRail="false" axis="x" length="100" stepPercent="10" id="slider"/>
+                                    <ace:ajax event="slideEnd" execute="@this" render="@form" />-->
                                 </ace:panel>
                             </td>
-                            <td><label for="inR">Выберите R:</label> <h:selectOneMenu id="inR">
-                                <f:selectItem itemValue="1" itemLabel="1"/>
+                            <td><label for="inR">Выберите R:</label> <h:selectOneMenu id="inR" value="#{pointBean.point.r}">
+                                <f:selectItem itemValue="1" itemLabel="1" />
                                 <f:selectItem itemValue="2" itemLabel="2"/>
                                 <f:selectItem itemValue="3" itemLabel="3"/>
                                 <f:selectItem itemValue="4" itemLabel="4"/>
@@ -31,8 +34,27 @@
                             </h:selectOneMenu>
                             </td>
                         </tr>
+                        <tr>
+                            <td><h:commandButton value="Send" action="#{pointBean.addPoint()}">
+                                <f:ajax execute="formtab" render="table"/>
+                            </h:commandButton></td>
+                        </tr>
                     </h:form>
                 </td>
+            </tr>
+            <tr>
+                <td><h:panelGroup id="table">
+                    <h:dataTable value="#{pointBean.points}" var="point">
+                        <h:column>
+                            <f:facet name="header">X</f:facet>
+                            #{point.x}
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">R</f:facet>
+                            #{point.r}
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup></td>
             </tr>
         </table>
     </ui:define>

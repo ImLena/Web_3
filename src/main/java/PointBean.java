@@ -3,6 +3,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -19,6 +20,8 @@ public class PointBean implements Serializable {
 
     private PointEntity point = new PointEntity();
     private List<PointEntity> points = new ArrayList<>();
+    private Double[] Vals = {1.0, 2.0, 3.0, 4.0, 5.0};
+
 
 /*
     @PostConstruct
@@ -31,7 +34,7 @@ public class PointBean implements Serializable {
     public PointBean() {}
 
     public void addPoint() {
-        if (point.validate()) {
+        if (validate()) {
             point.setDate(new Date());
             point.setResult(point.check(point.getX(), point.getY(), point.getR()));
             System.out.println(point.toString());
@@ -40,6 +43,10 @@ public class PointBean implements Serializable {
             System.out.println("works: " + point.toString());
             point = new PointEntity();
         }
+    }
+
+    private boolean validate(){
+        return (point.getX()<3&&point.getX()>-3)&&(Arrays.asList(Vals).contains(point.getR()));
     }
 
     public PointEntity getPoint() {

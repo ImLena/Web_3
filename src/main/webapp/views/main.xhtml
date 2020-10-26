@@ -80,11 +80,18 @@
                             <f:facet name="header">Result</f:facet>
                             #{point.check(point.x, point.y, point.r)}
                         </h:column>
+                        <h:column>
+                            <f:facet name="header">Date</f:facet>
+                            #{point.date}
+                        </h:column>
                     </h:dataTable>
                 </h:panelGroup></td>
                 <td>
                     <div id = "canvas"></div>
                     <h:outputScript library="js" name="canvas.js"/>
+                </td>
+                <td>
+                    <h:button outcome="index" value="Перейти на стартовую страницу приложения"/>
                 </td>
             </tr>
         </table>

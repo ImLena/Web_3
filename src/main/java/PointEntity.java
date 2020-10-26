@@ -70,9 +70,6 @@ public class PointEntity {
                 (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2));
     }
 
-    public boolean validate(){
-        return true;
-    }
 
     @Override
     public String toString(){

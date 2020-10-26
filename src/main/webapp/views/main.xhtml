@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ace="http://www.icefaces.org/icefaces/components">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
 <!--      xmlns:ice="http://www.icesoft.com/icefaces/component">-->
 <ui:composition template="head.xhtml">
     <ui:define name="page">
@@ -15,7 +15,9 @@
                         <tr>
                             <td>
                                 <label for="inX">Выберите X:</label>
-                                <h:inputText id="inX" type="text" maxlength="5" value="#{pointBean.point.x}"/>
+                                <h:inputText id="inX" type="text" maxlength="5" value="#{pointBean.point.x}" required="true" requiredMessage="Х должен быть от -3 до 3">/>
+                                    <f:validateDoubleRange minimum="-2.9999" maximum="2.9999"/>
+                                </h:inputText>
                             </td>
                             <td id="y"><label>Выберите y:</label><br/>
                                 <h:commandButton value="1" type="button" onclick="y=1;chengeY()">

@@ -16,6 +16,12 @@
         <managed-bean-scope>application</managed-bean-scope>
     </managed-bean>
 
+    <managed-bean>
+        <managed-bean-name>pointDB</managed-bean-name>
+        <managed-bean-class>PointsDB</managed-bean-class>
+        <managed-bean-scope>application</managed-bean-scope>
+    </managed-bean>
+
     <navigation-rule>
         <from-view-id>/views/main.xhtml</from-view-id>
         <navigation-case>

@@ -4,8 +4,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ace="http://www.icefaces.org/icefaces/components"
-      xmlns:ice="http://www.icesoft.com/icefaces/component">
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:ace="http://www.icefaces.org/icefaces/components">
+<!--      xmlns:ice="http://www.icesoft.com/icefaces/component">-->
 <ui:composition template="head.xhtml">
     <ui:define name="page">
         <table class="verst">
@@ -17,20 +17,32 @@
                                 <label for="inX">Выберите X:</label>
                                 <h:inputText id="inX" type="text" maxlength="5" value="#{pointBean.point.x}"/>
                             </td>
-                            <td><label>ice</label>
-                                <ace:panel>
-                                    <ace:sliderEntry/>
-                                    <!--
-                                    <ace:sliderEntry min="-4" max="4" clickableRail="false" axis="x" length="100" stepPercent="10" id="slider"/>
-                                    <ace:ajax event="slideEnd" execute="@this" render="@form" />-->
-                                </ace:panel>
+                            <td id="y"><label>Выберите y:</label><br/>
+                                <h:commandButton value="1" type="button" onclick="y=1;chengeY()">
+                                </h:commandButton><br/>
+
+                                <h:commandButton value="2" type="button" onclick="y=2;chengeY()">
+
+                                </h:commandButton><br/>
+                                <h:commandButton value="3" type="button" onclick="y=3;chengeY()">
+
+                                </h:commandButton><br/>
+                                <h:commandButton value="4" type="button" onclick="y=4;chengeY()">
+
+                                </h:commandButton><br/>
+                                <h:commandButton value="5" type="button" onclick="y=5;chengeY()">
+
+                                </h:commandButton>
+                                <h:inputHidden id="inY" value="#{pointBean.point.y}"/>
+
+                                <!--    <ace:panel>-->
+                                <!--        <ace:sliderEntry min="-4" max="4" clickableRail="false" axis="x" length="1000"-->
+                                <!--        stepPercent="10" id="slider"/>-->
+                                <!--        </ace:panel>-->
+
                             </td>
+
                             <td><label for="inR">Выберите R:</label> <h:selectOneMenu id="inR" value="#{pointBean.point.r}">
-                                <!--<f:selectItem itemValue="1" itemLabel="1" action="#{pointBean.point.setR(1)}"/>
-                                <f:selectItem itemValue="2" itemLabel="2" action="#{pointBean.point.setR(2)}"/>
-                                <f:selectItem itemValue="3" itemLabel="3" action="#{pointBean.point.setR(3)}"/>
-                                <f:selectItem itemValue="4" itemLabel="4" action="#{pointBean.point.setR(4)}"/>
-                                <f:selectItem itemValue="5" itemLabel="5" action="#{pointBean.point.setR(5)}"/>-->
                                 <f:selectItem itemValue="1" itemLabel="1" />
                                 <f:selectItem itemValue="2" itemLabel="2"/>
                                 <f:selectItem itemValue="3" itemLabel="3"/>
@@ -40,7 +52,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td><h:commandButton value="Send" action="#{pointBean.addPoint()}">
+                            <td><h:commandButton id="send" value="Send" action="#{pointBean.addPoint()}">
                                 <f:ajax execute="formtab" render="table"/>
                             </h:commandButton></td>
                         </tr>
@@ -55,11 +67,23 @@
                             #{point.x}
                         </h:column>
                         <h:column>
+                            <f:facet name="header">Y</f:facet>
+                            #{point.y}
+                        </h:column>
+                        <h:column>
                             <f:facet name="header">R</f:facet>
                             #{point.r}
                         </h:column>
+                        <h:column>
+                            <f:facet name="header">Result</f:facet>
+                            #{point.check(point.x, point.y, point.r)}
+                        </h:column>
                     </h:dataTable>
                 </h:panelGroup></td>
+                <td>
+                    <div id = "canvas"></div>
+                    <h:outputScript library="js" name="canvas.js"/>
+                </td>
             </tr>
         </table>
     </ui:define>

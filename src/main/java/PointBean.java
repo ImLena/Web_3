@@ -20,6 +20,7 @@ public class PointBean {
         if (point.validate()) {
             point.setDate(new Date());
            // point.setResult(point.check(point.getX(), point.getY(), point.getR()));
+            System.out.println(point.toString());
             points.add(point);
             System.out.println("works: " + point.toString());
             point = new PointEntity();

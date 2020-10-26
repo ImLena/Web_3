@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="web" name="Web">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/src/main/webapp" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
+    <output url="file://$MODULE_DIR$/target/classes" />
+    <output-test url="file://$MODULE_DIR$/target/test-classes" />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="icefaces-ace" level="project" />
+    <orderEntry type="library" name="icefaces" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly.core:wildfly-elytron-integration:12.0.3.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly.core:wildfly-event-logger:12.0.3.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: io.undertow:undertow-servlet:2.1.3.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: io.undertow:undertow-websockets-jsr:2.1.3.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: io.undertow.jastow:jastow:2.0.8.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: com.sun.activation:jakarta.activation:1.2.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jakarta.validation:jakarta.validation-api:2.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jakarta.enterprise:jakarta.enterprise.cdi-api:2.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jakarta.inject:jakarta.inject-api:1.0" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: jakarta.json.bind:jakarta.json.bind-api:1.0.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse.jdt.core.compiler:ecj:4.6.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.eclipse:yasson:1.0.5" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish:jakarta.enterprise.concurrent:1.1.1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.glassfish:jakarta.el:3.0.3.jbossorg-2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly.wildfly-http-client:wildfly-http-client-common:1.0.21.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly.security.elytron-web:undertow-server-servlet:1.7.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly.wildfly-http-client:wildfly-http-naming-client:1.0.21.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.taglibs:taglibs-standard-spec:1.2.6-RC1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.taglibs:taglibs-standard-impl:1.2.6-RC1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.apache.taglibs:taglibs-standard-compat:1.2.6-RC1" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.common:jboss-common-beans:2.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.annotation:jboss-annotations-api_1.3_spec:2.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.enterprise.concurrent:jboss-concurrency-api_1.0_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.el:jboss-el-api_3.0_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.servlet:jboss-servlet-api_4.0_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.servlet.jsp:jboss-jsp-api_2.3_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.3_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.spec.javax.websocket:jboss-websocket-api_1.1_spec:2.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.metadata:jboss-metadata-common:13.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.metadata:jboss-metadata-ear:13.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.metadata:jboss-metadata-web:13.0.0.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.security:jboss-negotiation-common:3.0.6.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.security:jboss-negotiation-extras:3.0.6.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.security:jboss-negotiation-ntlm:3.0.6.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.jboss.security:jboss-negotiation-spnego:3.0.6.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.picketbox:picketbox:5.0.3.Final-redhat-00005" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.picketbox:picketbox-commons:1.0.0.final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.picketbox:picketbox-infinispan:5.0.3.Final-redhat-00005" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-clustering-common:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-clustering-service:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-clustering-web-container:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-ee:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-naming:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-naming-client:1.0.13.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-security:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-undertow:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.wildfly:wildfly-web-common:20.0.1.Final" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: xalan:serializer:2.7.1.jbossorg-4" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: xalan:xalan:2.7.1.jbossorg-4" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.faces:jsf-api:2.2.18" level="project" />
+    <orderEntry type="library" name="Maven: com.sun.faces:jsf-impl:2.2.18" level="project" />
+  </component>
+</module>

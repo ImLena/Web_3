@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="icefaces-ace">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Desktop/icefaces/lib/icefaces-ace.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Desktop/icefaces/lib/icefaces-ace.jar!/" />
+    </SOURCES>
+  </library>
+</component>

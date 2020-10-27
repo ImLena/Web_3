@@ -66,8 +66,8 @@ public class PointEntity {
     }
 
     public boolean check(double x, double y, double r) {
-        return (x >= 0 && y >= 0 && x <= r && y <= r) || (x <= 0 && y >= 0 && y <= (x - r/2) * (-2)) ||
-                (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2));
+        return (x >= 0 && y >= 0 && x <= r && y <= r) ||
+                (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2)) || (y <= (2*x + r) && y >= 0 && x <= 0);
     }
 
 

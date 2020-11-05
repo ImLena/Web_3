@@ -199,7 +199,7 @@ function loadDots(){
 
     if(cells[0].innerHTML !== "") {
         for (let i = 0; i < 4; i++) {
-            for (let j = 0; j < cells.length; j = j + 5) {
+            for (let j = 0; j < cells.length; j = j + 4) {
                 if (i === 0) arr_x.push(cells[i + j].innerHTML)
                 if (i === 1) arr_y.push(cells[i + j].innerHTML)
                 if (i === 2) arr_r.push(cells[i + j].innerHTML)

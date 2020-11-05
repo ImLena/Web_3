@@ -9,11 +9,6 @@ import java.util.List;
 
 public class PointBean implements Serializable {
 
-    // генератор id для бд
-    /*  @SequenceGenerator(name = "sequence", sequenceName = "SEQUENCE", allocationSize = 1, initialValue = 1)
-        @Id
-        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="sequence")
-        private int id;*/
     @Inject
     @Named("pointDB")
     PointsDB pointsDB;
@@ -21,15 +16,6 @@ public class PointBean implements Serializable {
     private PointEntity point = new PointEntity();
     private List<PointEntity> points = new ArrayList<>();
     private Double[] Vals = {1.0, 2.0, 3.0, 4.0, 5.0};
-
-
-/*
-    @PostConstruct
-    public void init(){
-        point = new PointEntity();
-        points = new ArrayList<>(pointsDB.getPoints());
-    }
-*/
 
     public PointBean() {}
 

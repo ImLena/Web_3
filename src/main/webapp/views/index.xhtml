@@ -6,14 +6,20 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
 <ui:composition template="head.xhtml">
-<ui:define name="page">
-    <table class="startPage"> <tr>
-         <td>
-             <h1 id="clock"/>
-             <h:button outcome="main" value="Перейти на основную страницу приложения"/>
-         </td></tr>
-    </table>
-    <h:outputScript library="js" name="clock.js"/>
-</ui:define>
+    <ui:define name="page">
+        <table class="startPage">
+            <tr>
+                <td>
+                    <h1 id="clock"/>
+                    <h:button class="button" outcome="main" value="Перейти на основную страницу приложения"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <h:graphicImage value="/resources/kit.jpg" class="kit"/></td>
+            </tr>
+        </table>
+        <h:outputScript library="js" name="clock.js"/>
+    </ui:define>
 </ui:composition>
 </html>

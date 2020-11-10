@@ -1,4 +1,7 @@
 let x_inp = document.getElementById("formtab:inX");
+let y_save = 0;
+let x_save = 0;
+// let x_bean = document.getElementById("formtab:x_bean");
 let r_inp = document.getElementById("formtab:inR");
 let y_inp = document.getElementById("formtab:inY");
 let html = document.getElementById("canvas");
@@ -9,11 +12,11 @@ let arr_r = []
 let arr_res = []
 let check
 
-html.innerHTML = '<canvas id="graphic" style="margin: 20px">Not Allowed</canvas>';
+html.innerHTML = '<canvas id="graphic" style="margin: 20px; background: azure">Not Allowed</canvas>';
 let
     graph = document.getElementById("graphic"),
     ctx = graph.getContext('2d'),
-    x=0, y=1, r=1;
+    x=0, y, r=1;
 function drawCanvas() {
     graph.width = 400;
     graph.height = 400;
@@ -151,51 +154,90 @@ function rSign(r){
 
 }
 
+function oneDot(cx, cy){
+    ctx.beginPath();
+    ctx.fillStyle = "#5611BE";
+    ctx.arc(cx, cy, ctx.canvas.height / 100, 0, Math.PI * 2);
+    ctx.fill();
+}
 
 // установка x и r
 
-
-x_inp.addEventListener("change", function (){
-    x = x_inp.value
-    console.log(x)
-})
-
-r_inp.addEventListener("change", function (){
-    r = r_inp.value
-    console.log(r)
+function moveDot(){
+    r = r_inp.value;
     ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height)
     drawCanvas();
-
-})
-
-
-function drawDot(){
-    graph.addEventListener("mousedown", function (e){
-        let cx = e.offsetX;
-        let cy = e.offsetY;
-        ctx.beginPath();
-        ctx.fillStyle = "#5611BE";
-        ctx.arc(cx, cy, ctx.canvas.height/100, 0, Math.PI * 2);
-        ctx.fill();
-        x = ((cx-ctx.canvas.width/2)/(7*ctx.canvas.width/8-ctx.canvas.width/2))*r;
-        y = ((ctx.canvas.height/2-cy)/(ctx.canvas.width/2-ctx.canvas.height/8))*r;
-        x_inp.value = x.toString();
-        y_inp.value = y.toString();
-        document.getElementById("formtab:send").click();
-    });
+    x = x_inp.value;
+    y = y_inp.value;
+    y_save = y_inp.value;
+    let cxx = (x / r) * (7 * ctx.canvas.width / 8 - ctx.canvas.width / 2) + ctx.canvas.width / 2;
+    let cyy = (ctx.canvas.height / 2) - (y / r) * (ctx.canvas.width / 2 - ctx.canvas.height / 8);
+    if (validate()) {
+        oneDot(cxx, cyy);
+    }
+    console.log(x);
+    console.log(y);
 }
 
 
-function chengeY() {
-    if (y != null) {
-        y_inp.value = y.toString();
-    }
+x_inp.addEventListener("input", function (){
+    x_save = x_inp.value;
+    moveDot();
+})
+
+// y_inp.addEventListener("input", function (){
+//     moveDot();
+// })
+
+r_inp.addEventListener("change", function (){
+    moveDot();
+
+})
+
+function validate(){
+    const r_arr = [1, 2, 3, 4, 5];
+    return ((x>-3) && (x<3)) && ((y>=-4) && (y<=4)) && (r_arr.indexOf(r) !== null);
+}
+
+function drawDot(){
+    let ans = document.getElementById("answer")
+    graph.addEventListener("mousedown", function (e) {
+        let cx = e.offsetX;
+        let cy = e.offsetY;
+        x = ((cx - ctx.canvas.width / 2) / (7 * ctx.canvas.width / 8 - ctx.canvas.width / 2)) * r;
+        y = ((ctx.canvas.height / 2 - cy) / (ctx.canvas.width / 2 - ctx.canvas.height / 8)) * r;
+
+        if (validate()) {
+            // ctx.beginPath();
+            // ctx.fillStyle = "#5611BE";
+            // ctx.arc(cx, cy, ctx.canvas.height / 100, 0, Math.PI * 2);
+            // ctx.fill();
+            oneDot(cx, cy);
+            x_inp.value = x.toString();
+            y_inp.value = y.toString();
+            ans.innerText = "";
+            document.getElementById("formtab:send").click();
+            y_inp.value = y_save;
+            y = y_save;
+            x_inp.value = x_save;
+            x = x_save;
+
+
+        } else {
+            if (!((x>-3) && (x<3)))
+                ans.innerText = "x должен быть от -3 до 3"
+            if (!((y>=-4) && (y<=4)))
+                ans.innerText = "y должен быть от -4 до 4"
+            if (!((x>-3) && (x<3)) && !((y>=-4) && (y<=4)))
+                ans.innerText = "x должен быть от -3 до 3\ny должен быть от -4 до 4"
+
+        }
+    });
 }
 
 function loadDots(){
     let arr_cx = []
     let arr_cy = []
-    // let cells = document.querySelectorAll("#table td");
 
     if(cells[0].innerHTML !== "") {
         for (let i = 0; i < 4; i++) {
@@ -208,7 +250,7 @@ function loadDots(){
         }
     }
 
-    console.log(cells)
+
 
 
     for (let i = 0; i < arr_x.length; i++){
@@ -226,31 +268,35 @@ function loadDots(){
             "                            true\n" +
             "                        ") ctx.fillStyle = "green"
         else ctx.fillStyle = "darkred"
-        console.log(arr_res);
+        // console.log(arr_res);
         ctx.arc(arr_cx[i], arr_cy[i], ctx.canvas.height/100, 0, Math.PI * 2);
         ctx.fill();
     }
 
-    console.log("loaded")
 }
-function addDot(){
+function addDot() {
+    y = y_inp.value;
     check = (x >= 0 && y >= 0 && x <= r && y <= r) ||
-        (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2)) || (y <= (2 * x + r) && y >= 0 && x <= 0);
+        (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2)) || ((Number(y) <= (2*Number(x) + Number(r))) && y >= 0 && x <= 0);
+
+    console.log(2*Number(x) + Number(r));
+    console.log(y);
+    console.log(r);
+
+
+    console.log(check)
     arr_x.push(x);
     arr_y.push(y);
     arr_r.push(r);
     arr_res.push("\n" +
-        "                            "+check.toString()+"\n" +
+        "                            " + check.toString() + "\n" +
         "                        ");
-    console.log(arr_res)
-    console.log(arr_x);
-    console.log(arr_y);
-    console.log(arr_r);
-    ctx.clearRect(0,0, ctx.canvas.width, ctx.canvas.height)
+
+    ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
     drawCanvas();
+
 
 }
 
 drawCanvas();
-chengeY();
 drawDot();

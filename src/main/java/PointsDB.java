@@ -31,11 +31,9 @@ public class PointsDB implements Serializable {
       /*  SessionFactory sessionFactory = Hibernateutil.getSeeionFactory();
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-
         Student student = new Student();
         student.setFirstName("Bob");
         student.setAge(26);
-
         session.save(student);
         session.getTransaction().commit();*/
 
@@ -47,4 +45,3 @@ public class PointsDB implements Serializable {
         return points;
     }
 }
-

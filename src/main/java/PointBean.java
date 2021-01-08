@@ -17,7 +17,8 @@ public class PointBean implements Serializable {
     private List<PointEntity> points = new ArrayList<>();
     private Double[] Vals = {1.0, 2.0, 3.0, 4.0, 5.0};
 
-    public PointBean() {}
+    public PointBean() {
+    }
 
     public void addPoint() {
         if (validate()) {
@@ -31,8 +32,8 @@ public class PointBean implements Serializable {
         }
     }
 
-    private boolean validate(){
-        return (point.getX()<3&&point.getX()>-3)&&(Arrays.asList(Vals).contains(point.getR()));
+    private boolean validate() {
+        return (point.getX() < 3 && point.getX() > -3) && (Arrays.asList(Vals).contains(point.getR()));
     }
 
     public PointEntity getPoint() {

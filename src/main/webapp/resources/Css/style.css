@@ -67,6 +67,11 @@ tr{
     padding: 8%;
     margin: 5%;
 }
+#startbutton{
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 .header{
     height: 50px;
     width: 100%;
@@ -111,12 +116,63 @@ tr{
     align-self: center;
 }
 .maintable{
-    margin-top: 2%;
-    border-bottom: 1px #0085ad solid;
-    border-top: 1px #0085ad;
-    z-index: 99;
+    border: 5px solid #fff;
+    border-bottom-width: 3px;
+    border-collapse: collapse;
+    font-size: 15px;
+    background: #fff;
 }
 .main{
     margin: 2%;
     padding: 2%;
+}
+#table_paginator_bottom{
+    background: #f3f4f7;
+}
+#table_paginator_bottom span a{
+    background: #f3f4f7;
+}
+#table_paginator_bottom span a:hover{
+    background: #b1d4e5;
+}
+#table_paginator_bottom select:hover{
+    background: #b1d4e5;
+}
+#table_paginator_bottom select{
+    background: #f3f4f7;
+    box-shadow: #00112c;
+}
+#table_paginator_bottom a{
+    background: #48a9c5;
+}
+.maintable tr {
+    padding: 7px;
+    border: none;
+    text-align: left;
+    font-size: 15px;
+    border-top: 3px solid #fff;
+    border-bottom: #ced7df;
+}
+.maintable td {
+    padding: 7px;
+    border: 3px solid #fff!important;
+    font-size: 15px;
+}
+.maintable tbody tr:nth-child(even){
+    background: #f8f8f8!important;
+}
+#y div{
+    height: 17%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    color: #f3f4f7;
+    background: #f3f4f7;
+}
+#y div span{
+    background: #b1d4e5;
+    border-bottom: #f3f4f7;
+}
+#table_head th{
+    background: #0085ad !important;
+    color: #f3f4f7;
 }

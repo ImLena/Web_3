@@ -26,17 +26,6 @@ public class PointsDB implements Serializable {
             }
             throw new RuntimeException(e);
         }
-
-
-      /*  SessionFactory sessionFactory = Hibernateutil.getSeeionFactory();
-        Session session = sessionFactory.openSession();
-        session.beginTransaction();
-        Student student = new Student();
-        student.setFirstName("Bob");
-        student.setAge(26);
-        session.save(student);
-        session.getTransaction().commit();*/
-
     }
 
     public List<PointEntity> getPoints(){

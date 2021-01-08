@@ -1,14 +1,9 @@
-import javax.ejb.Stateless;
 import javax.persistence.*;
 import java.util.Date;
 
 @Entity(name="pointEntity")
-@Table(name="points")
+@Table(name= "dots")
 public class PointEntity {
-
-  /*  @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)  */
-
 
     @SequenceGenerator(name = "sequence", sequenceName = "SEQUENCE", allocationSize = 1, initialValue = 1)
     @Id
@@ -65,9 +60,7 @@ public class PointEntity {
         return this.id;
     }
 
-    public boolean check(double x, double y, double r) {/*
-        x = Math.floor(x*10000)/10000;
-        y = Math.floor(y*10000)/10000;*/
+    public boolean check(double x, double y, double r) {
         return (x >= 0 && y >= 0 && x <= r && y <= r) ||
                 (x >= 0 && y <= 0 && x * x + y * y <= Math.pow(r, 2)) || (y <= (2*x + r) && y >= 0 && x <= 0);
     }

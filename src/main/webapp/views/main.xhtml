@@ -25,7 +25,7 @@
                                         <f:ajax event="change" render="messageX" />
                                     </h:inputText><br/>
                                     <h:message id="messageX" for="inX" class="alert alert-primary"/>
-<!--                                    <h:inputText id="x_bean" value="#{pointBean.point.x }"/>-->
+                                    <!--                                    <h:inputText id="x_bean" value="#{pointBean.point.x }"/>-->
                                 </td>
                             </tr>
                             <tr>
@@ -34,21 +34,6 @@
                                               onSlideEnd="moveDot()" display="outY" displayTemplate="y={value}">
                                         <p:ajax event="slideEnd" process="inR"/>
                                     </p:slider>
-<!--                                    <h:commandButton value="1" type="button" onclick="y=1;chengeY()">-->
-<!--                                    </h:commandButton>-->
-
-<!--                                    <h:commandButton value="2" type="button" onclick="y=2;chengeY()">-->
-
-<!--                                    </h:commandButton>-->
-<!--                                    <h:commandButton value="3" type="button" onclick="y=3;chengeY()">-->
-
-<!--                                    </h:commandButton>-->
-<!--                                    <h:commandButton value="4" type="button" onclick="y=4;chengeY()">-->
-
-<!--                                    </h:commandButton>-->
-<!--                                    <h:commandButton value="5" type="button" onclick="y=5;chengeY()">-->
-
-<!--                                    </h:commandButton>-->
                                     <h:inputHidden id="inY" value="#{pointBean.point.y}"/>
                                     <h:outputText id="outY" value="y=#{pointBean.point.y}"/>
                                 </td>
@@ -73,10 +58,9 @@
                             </tr>
                         </h:form>
                     </table>
-                    <br/>
-                    <h:button outcome="index" class="button" value="Перейти на стартовую страницу"/>
+                    <h:button id="startbutton" outcome="index" class="button" value="На стартовую страницу"/>
                 </td>
-                <td><h:panelGroup id="table" class="maintable">
+                <td><!--<h:panelGroup id="table" class="maintable">
                     <h:dataTable value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0">
                         <h:column>
                             <f:facet name="header">X</f:facet>
@@ -94,12 +78,25 @@
                             <f:facet name="header">Result</f:facet>
                             #{point.check(point.x, point.y, point.r)}
                         </h:column>
-                        <!-- <h:column>
-                             <f:facet name="header">Date</f:facet>
-                             #{point.date}
-                         </h:column>-->
                     </h:dataTable>
-                </h:panelGroup></td>
+                </h:panelGroup>-->
+                    <p:dataTable id="table" class="maintable" value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0"
+                                 paginator="true" rows="10"
+                                 rowsPerPageTemplate="10,15,20"
+                                 paginatorPosition="bottom">
+                        <p:column name="header" headerText="X">
+                            <h:outputText value="#{point.x}" />
+                        </p:column>
+                        <p:column name="header" headerText="Y">
+                            <h:outputText value="#{point.y}" />
+                        </p:column>
+                        <p:column name="header" headerText="R">
+                            <h:outputText value="#{point.r}" />
+                        </p:column>
+                        <p:column name="header" headerText="Result">
+                            <h:outputText value="#{point.result}" />
+                        </p:column>
+                    </p:dataTable></td>
 
                 <td>
                     <div id="canvas"></div>
@@ -107,12 +104,6 @@
                     <h:outputScript library="js" name="canvas.js"/>
                 </td>
             </tr>
-<!--            <tr>-->
-<!--                <td class="right">-->
-<!--                    <h:outputText id="answer"/>-->
-<!--                    <h:outputScript library="js" name="canvas.js"/>-->
-<!--                </td>-->
-<!--            </tr>-->
         </table>
     </ui:define>
 </ui:composition>

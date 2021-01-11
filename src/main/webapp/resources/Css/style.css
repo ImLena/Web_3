@@ -134,13 +134,14 @@ tr{
 }
 #table_paginator_bottom span a:hover{
     background: #b1d4e5;
-}
-#table_paginator_bottom select:hover{
-    background: #b1d4e5;
+    border: #f8f8f8;
 }
 #table_paginator_bottom select{
     background: #f3f4f7;
-    box-shadow: #00112c;
+}
+#table_paginator_bottom select:hover{
+    background: #b1d4e5;
+    border: #f8f8f8;
 }
 #table_paginator_bottom a{
     background: #48a9c5;

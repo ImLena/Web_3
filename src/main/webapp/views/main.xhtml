@@ -53,34 +53,35 @@
                             <tr>
                                 <td><h:commandButton id="send" value="Send" class="button" onclick="addDot()"
                                                      action="#{pointBean.addPoint()}">
-                                    <f:ajax execute="formtab" render="table"/>
+                                    <f:ajax execute="formtab" render="table1 table"/>
                                 </h:commandButton></td>
                             </tr>
                         </h:form>
                     </table>
                     <h:button id="startbutton" outcome="index" class="button" value="На стартовую страницу"/>
                 </td>
-                <td><!--<h:panelGroup id="table" class="maintable">
-                    <h:dataTable value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0">
-                        <h:column>
-                            <f:facet name="header">X</f:facet>
-                            #{point.x}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Y</f:facet>
-                            #{point.y}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">R</f:facet>
-                            #{point.r}
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">Result</f:facet>
-                            #{point.check(point.x, point.y, point.r)}
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>-->
-                    <p:dataTable id="table" class="maintable" value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0"
+                <td>
+                    <h:panelGroup id="table" class="maintable" style="display: none">
+                        <h:dataTable value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0">
+                            <h:column>
+                                <f:facet name="header">X</f:facet>
+                                #{point.x}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Y</f:facet>
+                                #{point.y}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">R</f:facet>
+                                #{point.r}
+                            </h:column>
+                            <h:column>
+                                <f:facet name="header">Result</f:facet>
+                                #{point.check(point.x, point.y, point.r)}
+                            </h:column>
+                        </h:dataTable>
+                    </h:panelGroup>
+                    <p:dataTable id="table1" class="maintable" value="#{pointBean.points}" var="point" cellspacing="0" cellpadding="0"
                                  paginator="true" rows="10"
                                  rowsPerPageTemplate="10,15,20"
                                  paginatorPosition="bottom">

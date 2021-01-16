@@ -3,6 +3,7 @@ import javax.inject.Named;
 import javax.transaction.*;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 @Named("pointDB")
